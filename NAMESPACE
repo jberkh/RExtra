@@ -1,0 +1,10 @@
+useDynLib(RExtra, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+exportPattern("^[[:alpha:]]+")
+
+export("%!in%")
+export("*")
+export("+")
+export(duplicated)
+export(mapvalues)
+export(vroom)
