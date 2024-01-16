@@ -10,11 +10,17 @@
 #' "Hello World!" * 2
 
 "*" = function(x,y) {
-  if (!is.numeric(x) & !isS4(x) & is.numeric(y)) {
+  if (
+    !is.numeric(x) & 
+    !is.logical(x) &
+    !isS4(x) & 
+    is.numeric(y)
+  ) {
     return(rep(x,y))
     
   } else if (!is.numeric(y) & is.numeric(x)) {
-    return((y * x))
+    # Recursively handle x, y order reversed
+    return(y * x)
 
   } else {
     .Primitive("*")(x,y)
