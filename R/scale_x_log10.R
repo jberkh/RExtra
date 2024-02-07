@@ -4,7 +4,7 @@
 #' With correct log minor breaks
 #' 
 #' @param ... Passes to ggplot2::scale_x_log10
-#' @return A multiplicated string
+#' @return A ggplot2 axis
 #' @export
 #' @examples
 #' ggplot(df) +
@@ -32,13 +32,4 @@ scale_x_log10 <- function(...) {
     args$minor_breaks <- log10_minor_break()
   }
   return(do.call(ggplot2::scale_x_log10, args))
-}
-
-scale_y_log10 <- function(...) {
-  args <- list(...)  # Capture all arguments in a list
-  if (is.null(args$minor_breaks)) {
-    # If not defined, use the log10 minor break function
-    args$minor_breaks <- log10_minor_break()
-  }
-  return(do.call(ggplot2::scale_y_log10, args))
 }

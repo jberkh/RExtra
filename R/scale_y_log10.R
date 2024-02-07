@@ -4,11 +4,11 @@
 #' With correct log minor breaks
 #' 
 #' @param ... Passes to ggplot2::scale_y_log10
-#' @return A multiplicated string
+#' @return A ggplot2 axis
 #' @export
 #' @examples
-#' ggplot(df, aes(x,y)) +
-#'   geom_point() + 
+#' ggplot(df) +
+#'   geom_point(aes(x,y)) + 
 #'   scale_y_log10()
 
 scale_y_log10 <- function(...) {
