@@ -27,7 +27,7 @@ scale_y_log10 <- function(...) {
   }
   
   args <- list(...)  # Capture all arguments in a list
-  if (is.null(args$minor_breaks)) {
+  if (!"minor_breaks" %in% names(args)) {
     # If not defined, use the log10 minor break function
     args$minor_breaks <- log10_minor_break()
   }
